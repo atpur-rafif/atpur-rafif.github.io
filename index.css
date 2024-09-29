@@ -1,0 +1,194 @@
+body,
+html {
+	scroll-snap-type: y mandatory;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0px;
+	flex-direction: column;
+	font-family: Menlo, monospace;
+	overflow-x: hidden;
+}
+
+main {
+	all: unset;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	bottom: 0px;
+	position: fixed;
+	width: 100vw;
+	z-index: 10;
+}
+
+a {
+	all: unset;
+	cursor: pointer;
+}
+
+nav>a {
+	flex-grow: 1;
+	text-align: center;
+	padding: 1rem;
+	background-color: white;
+	transition: 0.3s;
+}
+
+nav>a:hover {
+	color: white;
+	background-color: black;
+}
+
+body:has(#home:hover) #home-link {
+	color: white;
+	background-color: #000000;
+}
+
+body:has(#experience:hover) #experience-link {
+	color: white;
+	background-color: #000d29;
+}
+
+body:has(#skill:hover) #skill-link {
+	color: white;
+	background-color: #011238;
+}
+
+body:has(#contact:hover) #contact-link {
+	color: white;
+	background-color: #001442;
+}
+
+#background {
+	position: fixed;
+	width: 100vw;
+	height: 200%;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: black;
+	z-index: -10;
+	transition: 0.3s;
+}
+
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+main>section {
+	scroll-snap-align: start;
+	width: 100vw;
+	height: 100lvh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: 0.1s;
+	color: white;
+	animation: fadeInAnimation ease 1s;
+}
+
+#home:hover~#background {
+	background-color: #000000;
+}
+
+#experience:hover~#background {
+	background-color: #000d29;
+}
+
+#skill:hover~#background {
+	background-color: #011238;
+}
+
+#contact:hover~#background {
+	background-color: #001442;
+}
+
+#person-name {
+	display: flex;
+	flex-direction: row;
+}
+
+#person-name * {
+	display: inline;
+	margin: 0px;
+	font-size: 10rem;
+	font-weight: normal;
+}
+
+#greeting {
+	display: grid;
+	grid-template-rows: 3;
+	grid-template-columns: 20;
+}
+
+#greeting * {
+	margin: 0px;
+	padding: 0px;
+	font-size: 1rem;
+	font-weight: normal;
+}
+
+#greeting table {
+	border: none;
+}
+
+#greeting .name {
+	font-size: 4rem;
+}
+
+#greeting .drop-cap {
+	opacity: 0.2;
+}
+
+ul {
+	padding: 3rem;
+	padding-top: 0rem;
+	display: flex;
+	align-items: start;
+	flex-direction: column;
+	gap: 0.5rem;
+	list-style-type: none;
+	margin: 0px;
+}
+
+#skill ul {
+	align-items: center;
+}
+
+#contact ul {
+	align-items: center;
+}
+
+li {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.img-icon {
+	aspect-ratio: 1/1;
+	width: 2rem;
+	height: 2rem;
+}
+
+#experience img {
+	opacity: 1;
+	transition: 0.5s;
+}
+
+#experience:hover img {
+	opacity: 1;
+}
