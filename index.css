@@ -184,11 +184,22 @@ li {
 	height: 2rem;
 }
 
-#experience img {
-	opacity: 1;
-	transition: 0.5s;
-}
+@media (hover: hover) {
+	#experience img {
+		transition: 0.5s;
+		opacity: 0.5;
+	}
 
-#experience:hover img {
-	opacity: 1;
+	#experience:hover img {
+		opacity: 1;
+	}
+
+	#skill img {
+		transition: 0.5s;
+		opacity: 0.5;
+	}
+
+	#skill:hover img {
+		opacity: 1;
+	}
 }
